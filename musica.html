@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<title>Invitación</title>
+
+<style>
+body {
+    margin: 0;
+    background: black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    font-family: Arial;
+}
+
+/* BOTÓN */
+button {
+    padding: 15px 30px;
+    font-size: 20px;
+    background: gold;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+}
+</style>
+
+</head>
+
+<body>
+
+<audio id="audio" loop>
+    <source src="musica.mp3" type="audio/mpeg">
+</audio>
+
+<button onclick="reproducir()">Entrar</button>
+
+<script>
+function reproducir() {
+    const audio = document.getElementById("audio");
+
+    audio.play().then(() => {
+        console.log("Audio funcionando");
+    }).catch(error => {
+        alert("Da otro clic para activar el audio");
+        console.log(error);
+    });
+}
+</script>
+
+</body>
+</html>
